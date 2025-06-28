@@ -8,6 +8,12 @@
 #include <stdio.h>
 #include <time.h>
 
+typedef struct ChefeDaCozinha {
+    int x;
+    int y;
+} ChefeDaCozinha;
+
+int colide_com_tripulante(int novo_y, int novo_x);
 void chefe_da_cozinha();
 
 #endif

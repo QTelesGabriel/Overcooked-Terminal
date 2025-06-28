@@ -8,6 +8,13 @@
 #include <stdio.h>
 #include <time.h>
 
-void jogar(int qtd_tripulantes);
+void* thread_mural_de_pedidos(void* arg);
+void* thread_exibir_informacoes(void* arg);
+void* thread_tripulantes(void* arg);
+void* thread_chefe_da_cozinha(void* arg);
+
+void inicializar_tripulantes();
+
+void jogar();
 
 #endif

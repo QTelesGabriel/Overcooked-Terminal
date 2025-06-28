@@ -1,55 +1,74 @@
 #include "../include/utils.h"
 #include "../include/jogar.h"
+#include "../include/config.h"
+#include "../include/dificuldade.h"
+
+void desenhar_tela() {
+    move(0, 0);
+    clear();
+
+    attron(COLOR_PAIR(4));
+    for (int i = 0; i < 50; i++) {
+        for (int j = 0; j < 116; j++) {
+            mvprintw(i, j, " ");
+        }
+    }
+
+    attron(COLOR_PAIR(3));
+    for (int i = 0; i < 50; i++) {
+        for (int j = 0; j < 116; j++) {
+            if (i == 0 || 
+                i == 50-1 ||
+                j == 0 ||
+                j == 116-1
+            ) {
+                mvprintw(i, j, " ");
+            }
+        }
+    }
+
+    attron(COLOR_PAIR(1));
+}
 
 void print_logo() {
-    printw(" ______   __   __   ______   ______    ______   ______   ______   ___   ___   ______   ______      \n");
-    printw("/_____/\\ /_/\\ /_/\\ /_____/\\ /_____/\\  /_____/\\ /_____/\\ /_____/\\ /___/\\/__/\\ /_____/\\ /_____/\\     \n");
-    printw("\\:::_ \\ \\\\:\\ \\\\ \\ \\\\::::_\\/_\\:::_ \\ \\ \\:::__\\/ \\:::_ \\ \\\\:::_ \\ \\\\::.\\ \\\\ \\ \\\\::::_\\/_\\:::_ \\ \\    \n");
-    printw(" \\:\\ \\ \\ \\\\:\\ \\\\ \\ \\\\:\\/___/\\\\:(_) ) )_\\:\\ \\  __\\:\\ \\ \\ \\\\:\\ \\ \\ \\\\:: \\/_) \\ \\\\:\\/___/\\\\:\\ \\ \\ \\   \n");
-    printw("  \\:\\ \\ \\ \\\\:\\_/.:\\ \\\\::___\\/_\\: __ `\\ \\\\:\\ \\/_/\\\\:\\ \\ \\ \\\\:\\ \\ \\ \\\\:. __  ( ( \\::___\\/_\\:\\ \\ \\ \\  \n");
-    printw("   \\:\\_\\ \\ \\\\ ..::/ / \\:\\____/\\\\ \\ `\\ \\ \\\\:\\_\\ \\ \\\\:\\_\\ \\ \\\\:\\_\\ \\ \\\\: \\ )  \\ \\ \\:\\____/\\\\:\\/.:| | \n");
-    printw("    \\_____\\/ \\___/_(   \\_____\\/ \\_\\/ \\_\\/ \\_____\\/ \\_____\\/ \\_____\\/ \\__\\/\\__\\/  \\_____\\/ \\____/_/ \n\n\n");
+
+    mvprintw(2, 2, " _____                                               __                 __     ");
+    mvprintw(3, 2, "/\\  __`\\                                            /\\ \\               /\\ \\    ");
+    mvprintw(4, 2, "\\ \\ \\/\\ \\  __  __     __   _ __   ___    ___     ___\\ \\ \\/'\\      __   \\_\\ \\   ");
+    mvprintw(5, 2, " \\ \\ \\ \\ \\/\\ \\/\\ \\  /'__`\\/\\`'__\\/'___\\ / __`\\  / __`\\ \\ , <    /'__`\\ /'_` \\  ");
+    mvprintw(6, 2, "  \\ \\ \\_\\ \\ \\ \\_/ |/\\  __/\\ \\ \\//\\ \\__//\\ \\L\\ \\/\\ \\L\\ \\ \\ \\\\`\\ /\\  __//\\ \\L\\ \\ ");
+    mvprintw(7, 2, "   \\ \\_____\\ \\___/ \\ \\____\\\\ \\_\\\\ \\____\\ \\____/\\ \\____/\\ \\_\\ \\_\\ \\____\\ \\___,_\\");
+    mvprintw(8, 2, "    \\/_____/\\/__/   \\/____/ \\/_/ \\/____/\\/___/  \\/___/  \\/_/\\/_/\\/____/\\/__,_ /");
+    
 }
 
 void mostrar_tutorial() {
-    clear();
-    move(0, 0);
-    printw("Aperte enter para voltar");
+    desenhar_tela();
+    mvprintw(2, 2, "Aperte enter para voltar");
     getch();
 
-    clear();
-    move(0, 0);
+    desenhar_tela();
     print_logo();
-    printw("1) Jogar\n2) Tutorial\n3) Sair\n\n");
+    mvprintw(12, 2, "1) Jogar");
+    mvprintw(13, 2, "2) Tutorial");
+    mvprintw(14, 2, "3) Sair");
 }
 
-void menu() {
-    initscr();              // Inicia ncurses
-    echo();                 // Não mostrar teclas pressionadas
-    cbreak();               // Desativa o buffering de linha
-    start_color();
-    keypad(stdscr, TRUE);   // Habilita teclas como setas
-
-    init_pair(1, COLOR_BLACK, COLOR_WHITE);
-    init_pair(2, COLOR_RED, COLOR_YELLOW);
-    init_pair(3, COLOR_BLACK, COLOR_BLACK);
-    init_pair(4, COLOR_WHITE, COLOR_WHITE);
-
-    attron(COLOR_PAIR(1));
-    
-    move(0, 0);
+void menu() {    
+    desenhar_tela();
     print_logo();
-    printw("1) Jogar\n2) Tutorial\n3) Sair\n\n");
+    mvprintw(12, 2, "1) Jogar");
+    mvprintw(13, 2, "2) Tutorial");
+    mvprintw(14, 2, "3) Sair");
 
     char op;
-    int lin = 13;
+    int lin = 16;
     do {
-        move(lin, 0);
-        printw("-> ");
+        mvprintw(lin, 2, "-> ");
         op = getch();
         switch(op) {
             case '1':
-                jogar(3);
+                escolher_dificuldade();
                 break;
 
             case '2':
@@ -70,6 +89,4 @@ void menu() {
     } while (op != '3');
     
     refresh();              // Atualiza a tela com o conteúdo desenhado
-
-    endwin();               // Finaliza a ncurses e retorna ao terminal normal
 }

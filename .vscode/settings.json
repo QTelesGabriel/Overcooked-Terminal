@@ -4,6 +4,7 @@
         "unistd.h": "c",
         "time.h": "c",
         "tripulantes.h": "c",
-        "mural_de_pedidos.h": "c"
+        "mural_de_pedidos.h": "c",
+        "dificuldade.h": "c"
     }
 }

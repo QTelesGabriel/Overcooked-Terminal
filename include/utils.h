@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <time.h>
 
+void desenhar_tela();
 void print_logo();
 void mostrar_tutorial();
 void menu();

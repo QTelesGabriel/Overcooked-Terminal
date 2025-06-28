@@ -32,5 +32,6 @@ void inicializar_lista(ListaDePedidos *lista);
 Pedido* criar_pedido(Comida comida, int id);
 void adicionar_pedido(ListaDePedidos *lista, Comida comida);
 void remover_pedido(ListaDePedidos *lista, int id);
+void liberar_lista(ListaDePedidos *lista);
 
 #endif
