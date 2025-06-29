@@ -165,7 +165,7 @@ Ao iniciar o jogo, você será levado a um menu principal.
         2.  Pressione **ESPAÇO**.
         3.  Digite o **ID do pedido** que deseja que o tripulante prepare (IDs são exibidos no mural de pedidos).
         4.  Pressione **ESPAÇO** novamente para confirmar a atribuição.
-      * **'p' ou 'P'**: Pausa o jogo ou encerra-o imediatamente, exibindo a tela final de pontuação. Pressionar qualquer tecla na tela final o retornará ao menu principal.
+      * **'p' ou 'P'**: Encerra o jogo imediatamente, exibindo a tela final de pontuação. Pressionar qualquer tecla na tela final o retornará ao menu principal.
 
 ### 4.5. Informações Visuais na Tela
 
