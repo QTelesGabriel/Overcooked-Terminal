@@ -87,6 +87,7 @@ void chefe_da_cozinha() {
                 break;
 
             case ' ': { // Começar a dar ordem para algum tripulante
+
                 char numero_buffer[10] = {0};
                 int numero_index = 0;
                 char ch = 0;
@@ -156,11 +157,27 @@ void chefe_da_cozinha() {
                 break;
 
             case 'p':
+                pthread_mutex_lock(&lock_jogo);
                 jogo_esta_valendo = 0;
+                pthread_mutex_unlock(&lock_jogo);
+
+                for (int i = 0; i < quantidade_tripulantes; i++) {
+                    pthread_mutex_lock(&tripulante[i].lock);
+                    pthread_cond_signal(&tripulante[i].cond);
+                    pthread_mutex_unlock(&tripulante[i].lock);
+                }
                 break;
 
             case 'P':
+                pthread_mutex_lock(&lock_jogo);
                 jogo_esta_valendo = 0;
+                pthread_mutex_unlock(&lock_jogo);
+
+                for (int i = 0; i < quantidade_tripulantes; i++) {
+                    pthread_mutex_lock(&tripulante[i].lock);
+                    pthread_cond_signal(&tripulante[i].cond);
+                    pthread_mutex_unlock(&tripulante[i].lock);
+                }
                 break;
 
             default:        // Algum outro botão;

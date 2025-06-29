@@ -143,26 +143,27 @@ void tela_final() {
     attron(COLOR_PAIR(1));
 
     // Título
-    mvprintw(8, 35, " ____    ______               ");
-    mvprintw(9, 35, "/\\  _`\\ /\\__  _\\   /'\\_/`\\    ");
-    mvprintw(10, 35, "\\ \\ \\L\\_\\/_/\\ \\/  /\\      \\   ");
-    mvprintw(11, 35, " \\ \\  _\\/  \\ \\ \\  \\ \\ \\__\\ \\  ");
-    mvprintw(12, 35, "  \\ \\ \\/    \\_\\ \\__\\ \\ \\_/\\ \\ ");
-    mvprintw(13, 35, "   \\ \\_\\    /\\_____\\\\ \\_\\\\ \\_\\");
-    mvprintw(14, 35, "    \\/_/    \\/_____/ \\/_/ \\/_/");
+    mvprintw(8, 40,  " ____    ______               ");
+    mvprintw(9, 40,  "/\\  _`\\ /\\__  _\\   /'\\_/`\\    ");
+    mvprintw(10, 40, "\\ \\ \\_/ \\/_/\\ \\/  /\\      \\   ");
+    mvprintw(11, 40, " \\ \\  _\\   \\ \\ \\  \\ \\ \\__\\ \\  ");
+    mvprintw(12, 40, "  \\ \\ \\/    \\_\\ \\__\\ \\ \\_/\\ \\ ");
+    mvprintw(13, 40, "   \\ \\_\\    /\\_____\\\\_\\ \\_ \\ \\");
+    mvprintw(14, 40, "    \\/_/    \\/_____/ \\/_/ \\/_/");
 
     // Pontuação
     mvprintw(18, 40, "Pedidos Completos: %d", pontuacao);
     mvprintw(20, 40, "Faltaram: %d", lista->size);
     
     // Mensagem de retorno
-    mvprintw(26, 28, "PRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU");
+    mvprintw(26, 40, "PRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU");
 
     attroff(COLOR_PAIR(1));
     refresh();
     pthread_mutex_unlock(&ncurses_lock);
 
     // Espera uma tecla antes de voltar
+    flushinp();
     nodelay(stdscr, FALSE); // Espera input
     getch();                // Aguarda pressionar
     nodelay(stdscr, TRUE);  // Retorna ao modo não bloqueante
@@ -186,4 +187,5 @@ void exibir_informacoes() {
 
     desenhar_tela();
     tela_final();
+    usleep(1000 * 1000);
 }
