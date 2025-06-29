@@ -1,0 +1,19 @@
+# Arquivos de objeto
+*.o
+*.obj
+
+# Executável do jogo
+overcooked
+
+# Diretório de build
+build/
+
+# Arquivos de depuração e temporários do editor/IDE
+*.swp
+*.bak
+*~
+.vscode/
+.idea/
+
+# Logs e outros arquivos gerados
+*.log
