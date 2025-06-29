@@ -188,5 +188,4 @@ void exibir_informacoes() {
 
     desenhar_tela();
     tela_final();
-    usleep(1000 * 1000);
 }
