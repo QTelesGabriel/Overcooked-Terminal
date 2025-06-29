@@ -153,8 +153,8 @@ Ao iniciar o jogo, você será levado a um menu principal.
 
   * **Seleção de Dificuldade**: Após escolher iniciar o jogo, selecione a dificuldade desejada:
 
-      * **'1'**: Fácil (3 tripulantes, 120s de jogo, 8s para novos pedidos)
-      * **'2'**: Médio (4 tripulantes, 100s de jogo, 5s para novos pedidos)
+      * **'1'**: Fácil (3 tripulantes, 120s de jogo, 6s para novos pedidos)
+      * **'2'**: Médio (4 tripulantes, 100s de jogo, 4s para novos pedidos)
       * **'3'**: Difícil (5 tripulantes, 80s de jogo, 3s para novos pedidos)
 
   * **Dentro do Jogo**:
