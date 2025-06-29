@@ -14,6 +14,8 @@ void* thread_tripulantes(void* arg);
 void* thread_chefe_da_cozinha(void* arg);
 
 void inicializar_tripulantes();
+void inicializar_bancada_preparo();
+void inicializar_bancada_cozinha();
 
 void jogar();
 

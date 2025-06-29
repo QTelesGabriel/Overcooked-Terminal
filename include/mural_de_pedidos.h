@@ -12,8 +12,8 @@ extern int jogo_esta_valendo;
 
 typedef struct Comida{
     const char *tipo;
-    int tempo_ingredientes;
     int tempo_preparo;
+    int tempo_cozinha;
 } Comida;
 
 typedef struct Pedido {

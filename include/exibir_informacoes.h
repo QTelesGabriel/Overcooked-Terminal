@@ -15,6 +15,7 @@ void mostrar_preparo();
 void mostrar_cozinha();
 void mostrar_chefe();
 void mostrar_tripulantes();
+void mostrar_informacoes();
 void exibir_informacoes();
 
 #endif

@@ -50,18 +50,21 @@ void escolher_dificuldade() {
         op = getch();
         switch (op) {
             case '1':
-                quantidade_tripulantes = 1;
-                intervalo_pedidos = 10;
+                quantidade_tripulantes = 3;
+                tempo_de_jogo = 120;
+                intervalo_pedidos = 8;
                 break;
             
             case '2':
-                quantidade_tripulantes = 2;
-                intervalo_pedidos = 7;
+                quantidade_tripulantes =  4;
+                tempo_de_jogo = 100;
+                intervalo_pedidos = 5;
                 break;
     
             case '3':
-                quantidade_tripulantes = 3;
-                intervalo_pedidos = 4;
+                quantidade_tripulantes = 5;
+                tempo_de_jogo = 80;
+                intervalo_pedidos = 3;
                 break;
     
             default:

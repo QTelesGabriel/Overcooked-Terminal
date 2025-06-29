@@ -1,8 +1,6 @@
 #include "../include/mural_de_pedidos.h"
 #include "../include/config.h"
 
-int proximo_id = 1;
-
 void inicializar_lista(ListaDePedidos *lista) {
     lista->size = 0;
     lista->primeiro = NULL;
@@ -92,9 +90,4 @@ void mural_de_pedidos(int tempo_por_pedido) {
         usleep(tempo_por_pedido * 1000 * 1000);
     }
 
-    pthread_mutex_lock(&lista_lock);
-    liberar_lista(lista);
-    free(lista);
-    lista = NULL;
-    pthread_mutex_unlock(&lista_lock);
 }
