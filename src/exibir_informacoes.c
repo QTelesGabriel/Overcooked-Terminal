@@ -154,6 +154,7 @@ void tela_final() {
     // Pontuação
     mvprintw(18, 40, "Pedidos Completos: %d", pontuacao);
     mvprintw(20, 40, "Faltaram: %d", lista->size);
+    mvprintw(22, 40, "Pontos: %d", pontuacao - lista->size);
     
     // Mensagem de retorno
     mvprintw(26, 40, "PRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU");
