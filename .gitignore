@@ -17,3 +17,6 @@ build/
 
 # Logs e outros arquivos gerados
 *.log
+
+# Documentacao feita por motivos acadêmicos
+documentacao.pdf
