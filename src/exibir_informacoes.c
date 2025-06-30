@@ -161,13 +161,13 @@ void tela_final() {
 
     attroff(COLOR_PAIR(1));
     refresh();
-    pthread_mutex_unlock(&ncurses_lock);
 
     // Espera uma tecla antes de voltar
     flushinp();
     nodelay(stdscr, FALSE); // Espera input
     getch();                // Aguarda pressionar
     nodelay(stdscr, TRUE);  // Retorna ao modo não bloqueante
+    pthread_mutex_unlock(&ncurses_lock);
 }
 
 void exibir_informacoes() {
