@@ -185,7 +185,7 @@ Isso removerá o executável `overcooked` e todo o conteúdo do diretório `buil
 
 -----
 
-### 5. Imagens
+## 5. Imagens
 <img width="944" height="917" alt="image" src="https://github.com/user-attachments/assets/2085f95a-4d73-4151-a0d6-2f3ccf389015" />
 <img width="937" height="911" alt="image" src="https://github.com/user-attachments/assets/2cb10478-2510-448a-9a28-810a2a085708" />
 <img width="938" height="912" alt="image" src="https://github.com/user-attachments/assets/31ddc7d5-7105-4b3d-885c-73d5f4689200" />
